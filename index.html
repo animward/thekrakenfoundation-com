@@ -667,23 +667,43 @@ body::after {
 /* ════════════════════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════════════════════ */
+/* ── Tablet (960px) ───────────────────────────────── */
 @media (max-width: 960px) {
-  .divisions-grid { grid-template-columns: repeat(2, 1fr); }
-  .mission-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .mission-primary { border-left: none; padding-left: 0; border-top: 2px solid var(--cyan-dim); padding-top: 1.5rem; }
-  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-inner { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
-  .footer-network { justify-content: center; }
+  .divisions-grid   { grid-template-columns: repeat(2, 1fr); }
+  .mission-grid     { grid-template-columns: 1fr; gap: 3rem; }
+  .mission-primary  { border-left: none; padding-left: 0; border-top: 2px solid var(--cyan-dim); padding-top: 1.5rem; }
+  .contact-grid     { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-inner     { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
+  .footer-network   { justify-content: center; }
 }
 
+/* ── Mobile (600px) ───────────────────────────────── */
 @media (max-width: 600px) {
-  .site-header { padding: 0 1rem; }
-  .header-depth { display: none; }
-  .depth-gauge { display: none; }
-  .coord.tr, .coord.br { display: none; }
-  .divisions-grid { grid-template-columns: 1fr; }
-  .nav-btn { padding: 0 0.9rem; font-size: 0.62rem; }
-  .section-wrap { padding: 3.5rem 1.2rem; }
+  .site-header      { padding: 0 1rem; grid-template-columns: 1fr; justify-items: center; }
+  .header-signal    { display: none; }
+  .header-depth     { display: none; }
+  .depth-gauge      { display: none; }
+  .site-nav         { justify-content: flex-start; overflow-x: auto; padding: 0 0.5rem; }
+  .nav-btn          { padding: 0 0.8rem; font-size: 0.6rem; flex-shrink: 0; }
+  .hero-content     { padding: 3rem 1.2rem; max-width: 100%; }
+  .hero-title       { font-size: clamp(1.8rem, 10vw, 3rem); }
+  .coord.tl         { display: none; }
+  .coord.tr         { display: none; }
+  .coord.br         { display: none; }
+  .coord.bl         { font-size: 0.52rem; }
+  .impact-stat      { padding: 1rem; }
+  .stat-number      { font-size: 2rem; }
+  .divisions-grid   { grid-template-columns: 1fr; }
+  .section-wrap     { padding: 3rem 1.2rem; }
+  .section-title    { font-size: 0.9rem; letter-spacing: 0.15em; }
+  .footer-mark      { font-size: 0.7rem; letter-spacing: 0.15em; }
+}
+
+/* ── Small phones (400px) ─────────────────────────── */
+@media (max-width: 400px) {
+  .hero-tagline     { font-size: 0.9rem; }
+  .hero-cta         { padding: 0.8rem 1.4rem; font-size: 0.65rem; }
+  .nav-btn          { padding: 0 0.6rem; font-size: 0.58rem; }
 }
 
 </style>
