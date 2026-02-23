@@ -257,6 +257,33 @@ body::after {
 }
 
 /* Sonar ping animation */
+.hero-sigil {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none; z-index: 0;
+}
+
+.sigil-outer {
+  position: absolute;
+  width: min(75vw, 75vh); height: min(75vw, 75vh);
+  animation: sigil-cw 120s linear infinite;
+}
+
+.sigil-inner {
+  position: absolute;
+  width: min(48vw, 48vh); height: min(48vw, 48vh);
+  animation: sigil-ccw 80s linear infinite;
+}
+
+.sigil-pulse {
+  position: absolute;
+  width: min(22vw, 22vh); height: min(22vw, 22vh);
+  animation: sigil-cw 40s linear infinite;
+}
+
+@keyframes sigil-cw  { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes sigil-ccw { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+
 .sonar-field {
   position: absolute; inset: 0;
   display: flex;
@@ -741,6 +768,40 @@ body::after {
 <div id="tab-home" class="tab-panel active">
   <section class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
+
+    <!-- 8-pointed star sigil — two squares at 45° -->
+    <div class="hero-sigil" aria-hidden="true">
+      <svg class="sigil-outer" viewBox="-300 -300 600 600" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="0" cy="0" r="278" fill="none" stroke="#76b900" stroke-width="0.5" opacity="0.25"/>
+        <circle cx="0" cy="0" r="195" fill="none" stroke="#76b900" stroke-width="0.4" opacity="0.15"/>
+        <rect x="-168" y="-168" width="336" height="336" fill="none" stroke="#76b900" stroke-width="0.8" opacity="0.18"/>
+        <rect x="-168" y="-168" width="336" height="336" fill="none" stroke="#76b900" stroke-width="0.8" opacity="0.18" transform="rotate(45)"/>
+        <line x1="0" y1="-278" x2="0" y2="278" stroke="#76b900" stroke-width="0.3" opacity="0.1"/>
+        <line x1="-278" y1="0" x2="278" y2="0" stroke="#76b900" stroke-width="0.3" opacity="0.1"/>
+        <line x1="-196.57" y1="-196.57" x2="196.57" y2="196.57" stroke="#76b900" stroke-width="0.3" opacity="0.1"/>
+        <line x1="196.57" y1="-196.57" x2="-196.57" y2="196.57" stroke="#76b900" stroke-width="0.3" opacity="0.1"/>
+        <circle cx="0"       cy="-278"    r="5" fill="none" stroke="#76b900" stroke-width="1" opacity="0.4"/>
+        <circle cx="196.57"  cy="-196.57" r="5" fill="none" stroke="#76b900" stroke-width="1" opacity="0.4"/>
+        <circle cx="278"     cy="0"       r="5" fill="none" stroke="#76b900" stroke-width="1" opacity="0.4"/>
+        <circle cx="196.57"  cy="196.57"  r="5" fill="none" stroke="#76b900" stroke-width="1" opacity="0.4"/>
+        <circle cx="0"       cy="278"     r="5" fill="none" stroke="#76b900" stroke-width="1" opacity="0.4"/>
+        <circle cx="-196.57" cy="196.57"  r="5" fill="none" stroke="#76b900" stroke-width="1" opacity="0.4"/>
+        <circle cx="-278"    cy="0"       r="5" fill="none" stroke="#76b900" stroke-width="1" opacity="0.4"/>
+        <circle cx="-196.57" cy="-196.57" r="5" fill="none" stroke="#76b900" stroke-width="1" opacity="0.4"/>
+        <line x1="0" y1="-278" x2="0" y2="-292" stroke="#76b900" stroke-width="1" opacity="0.35"/>
+        <line x1="278" y1="0" x2="292" y2="0" stroke="#76b900" stroke-width="1" opacity="0.35"/>
+        <line x1="0" y1="278" x2="0" y2="292" stroke="#76b900" stroke-width="1" opacity="0.35"/>
+        <line x1="-278" y1="0" x2="-292" y2="0" stroke="#76b900" stroke-width="1" opacity="0.35"/>
+      </svg>
+      <svg class="sigil-inner" viewBox="-200 -200 400 400" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="0" cy="0" r="155" fill="none" stroke="#76b900" stroke-width="0.5" stroke-dasharray="3 9" opacity="0.22"/>
+        <circle cx="0" cy="0" r="88"  fill="none" stroke="#76b900" stroke-width="0.5" stroke-dasharray="2 7" opacity="0.16"/>
+      </svg>
+      <svg class="sigil-pulse" viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="0" cy="0" r="55" fill="none" stroke="#76b900" stroke-width="0.6" opacity="0.2"/>
+        <circle cx="0" cy="0" r="5"  fill="#76b900" opacity="0.35"/>
+      </svg>
+    </div>
 
     <div class="sonar-field" aria-hidden="true">
       <div class="sonar-origin">
