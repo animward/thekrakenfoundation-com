@@ -22,19 +22,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/arg-effects.css">
 <style>
+@font-face {
+  font-family: 'Alliance No2';
+  src: url('fonts/AllianceNo2-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
-  --bg:      #020812;
-  --bg2:     #060e20;
-  --bg3:     #0a1430;
-  --text:    #c8cad8;
-  --muted:   #4a5270;
-  --dim:     #2a3050;
-  --gold:    #b89040;
-  --gold-br: #d4aa58;
+  --bg:       #020812;
+  --bg2:      #060e20;
+  --bg3:      #0a1430;
+  --text:     #c8cad8;
+  --muted:    #4a5270;
+  --dim:      #2a3050;
+  --gold:     #b89040;
+  --gold-br:  #d4aa58;
   --gold-dim: rgba(184,144,64,0.12);
-  --border:  rgba(184,144,64,0.08);
-  --serif:   'Cinzel', serif;
-  --body:    'Crimson Pro', Georgia, serif;
+  --border:   rgba(184,144,64,0.08);
+  --serif:    'Cinzel', serif;
+  --body:     'Crimson Pro', Georgia, serif;
+  --alliance: 'Alliance No2', 'Helvetica Neue', sans-serif;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -71,14 +79,14 @@ nav.scrolled {
 }
 .nav-brand img { height: 36px; opacity: 0.75; filter: sepia(0.2); }
 .nav-brand span {
-  font-family: var(--serif); font-size: 13px; letter-spacing: 3px;
-  color: var(--gold); text-transform: uppercase; font-weight: 400;
+  font-family: var(--alliance); font-size: 12px; letter-spacing: 4px;
+  color: var(--gold); text-transform: uppercase; font-weight: 300;
 }
 .nav-links {
   display: flex; gap: 36px;
 }
 .nav-links a {
-  font-family: var(--serif); font-size: 10px; letter-spacing: 3px;
+  font-family: var(--alliance); font-size: 10px; letter-spacing: 3px;
   text-transform: uppercase; color: var(--muted);
   text-decoration: none; transition: color 0.2s;
 }
@@ -120,7 +128,7 @@ nav.scrolled {
   to { opacity: 1; transform: translateY(0); }
 }
 .hero-eyebrow {
-  font-family: var(--serif); font-size: 9px; letter-spacing: 5px;
+  font-family: var(--alliance); font-size: 9px; letter-spacing: 6px;
   color: var(--gold); text-transform: uppercase; margin-bottom: 24px;
   opacity: 0.7;
 }
@@ -142,7 +150,7 @@ nav.scrolled {
 }
 .hero-scroll {
   display: flex; flex-direction: column; align-items: center; gap: 8px;
-  color: var(--dim); font-family: var(--serif); font-size: 8px;
+  color: var(--dim); font-family: var(--alliance); font-size: 8px;
   letter-spacing: 3px; text-transform: uppercase; text-decoration: none;
   transition: color 0.2s;
 }
@@ -165,7 +173,7 @@ nav.scrolled {
   max-width: 1100px; margin: 0 auto;
 }
 .section-eyebrow {
-  font-family: var(--serif); font-size: 9px; letter-spacing: 5px;
+  font-family: var(--alliance); font-size: 9px; letter-spacing: 5px;
   color: var(--gold); text-transform: uppercase;
   margin-bottom: 20px; opacity: 0.7;
 }
@@ -242,7 +250,7 @@ nav.scrolled {
 .division-card:hover { background: var(--bg3); }
 .division-card:hover::after { opacity: 0.4; }
 .division-numeral {
-  font-family: var(--serif); font-size: 11px; letter-spacing: 3px;
+  font-family: var(--alliance); font-size: 10px; letter-spacing: 4px;
   color: var(--gold); opacity: 0.6; margin-bottom: 14px;
   display: block;
 }
@@ -269,7 +277,7 @@ nav.scrolled {
 }
 .contact-email {
   display: inline-block;
-  font-family: var(--serif); font-size: 15px; letter-spacing: 3px;
+  font-family: var(--alliance); font-size: 13px; letter-spacing: 4px;
   color: var(--gold); text-decoration: none; text-transform: uppercase;
   padding: 18px 36px;
   border: 1px solid rgba(184,144,64,0.25);
@@ -299,14 +307,14 @@ footer {
   display: flex; flex-direction: column; gap: 12px;
 }
 footer p {
-  font-family: var(--serif); font-size: 9px; letter-spacing: 3px;
+  font-family: var(--alliance); font-size: 9px; letter-spacing: 3px;
   color: var(--dim); text-transform: uppercase;
 }
 .network-links {
   display: flex; flex-wrap: wrap; gap: 20px;
 }
 .network-links a {
-  font-family: var(--serif); font-size: 9px; letter-spacing: 2px;
+  font-family: var(--alliance); font-size: 9px; letter-spacing: 2px;
   color: var(--dim); text-decoration: none; text-transform: uppercase;
   transition: color 0.2s;
 }
@@ -350,7 +358,7 @@ footer p {
 
 <nav id="nav">
   <a href="/" class="nav-brand">
-    <img src="images/PNG-CERBERUS-W.png" alt="The Kraken Foundation">
+    <img src="images/TKF-W.png" alt="The Kraken Foundation">
     <span>The Kraken Foundation</span>
   </a>
   <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
@@ -364,6 +372,7 @@ footer p {
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
+  <img src="images/OCTO-SUBMARK.png" alt="" style="position:absolute;width:min(700px,85vw);top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.028;mix-blend-mode:screen;pointer-events:none;z-index:1;user-select:none;">
   <div class="hero-content">
     <p class="hero-eyebrow">Established · MMXXIV · Antarctic Alliance Article 7</p>
     <h1 class="hero-title">The Kraken<br>Foundation</h1>
